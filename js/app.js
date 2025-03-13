@@ -30,8 +30,20 @@ function createHtml(dataEmail) {
 // bottone
 const buttonElement = document.getElementById("button")
 
-buttonElement.addEventListener('click', function(){
+buttonElement.addEventListener('click', function () {
     emailList.innerHTML = ''
+    items = ''
+    for (let i = 0; i < 10; i++) {
+        fetch("https://flynn.boolean.careers/exercises/api/random/mail")
+            .then(response => response.json())
+            .then(data => {
+                createHtml(data.response)
+                emailList.innerHTML = items;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    };
 }
 );
 
