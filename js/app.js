@@ -5,18 +5,21 @@ fetch("https://flynn.boolean.careers/exercises/api/random/mail")
     .then(data => {
         console.log(data.response);
         createHtml (data.response)
-        console.log(items)
+        console.log(items);
+        emailList.innerHTML = items;
     })
     .catch(error => {
         console.error(error);
     });
 
-
+    // email list html
     const emailList = document.getElementById("email-list")
     console.log(emailList)
-    let items = ''
-    // funzione per inserire html
 
+    // elemento iniziale a cui aggiungo html
+    let items = ''
+
+    // funzione per inserire html
     function createHtml (dataEmail) {
         items += `<li>${dataEmail}</li>`
     }
