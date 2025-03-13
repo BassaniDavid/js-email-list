@@ -1,26 +1,27 @@
 
-// fetch per fare una richiesta all API di boolean
-fetch("https://flynn.boolean.careers/exercises/api/random/mail")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.response);
-        createHtml (data.response)
-        console.log(items);
-        emailList.innerHTML = items;
-    })
-    .catch(error => {
-        console.error(error);
-    });
+// reitero per 10 volte per avere 10 mail diverse
+for (let i = 0; i < 10; i++) {
 
-    // email list html
-    const emailList = document.getElementById("email-list")
-    console.log(emailList)
+    // fetch per fare una richiesta all API di boolean
+    fetch("https://flynn.boolean.careers/exercises/api/random/mail")
+        .then(response => response.json())
+        .then(data => {
+            createHtml(data.response)
+            emailList.innerHTML = items;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+};
 
-    // elemento iniziale a cui aggiungo html
-    let items = ''
+// email list html
+const emailList = document.getElementById("email-list");
 
-    // funzione per inserire html
-    function createHtml (dataEmail) {
-        items += `<li>${dataEmail}</li>`
-    }
+// elemento iniziale a cui aggiungo html
+let items = '';
+
+// funzione per inserire html
+function createHtml(dataEmail) {
+    items += `<li>${dataEmail}</li>`
+};
 
