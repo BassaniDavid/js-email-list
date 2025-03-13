@@ -22,6 +22,6 @@ let items = '';
 
 // funzione per inserire html
 function createHtml(dataEmail) {
-    items += `<li>${dataEmail}</li>`
+    items += `<li class="list-group-item pt-2 pb-2 ps-5 pe-5">${dataEmail}</li>`
 };
 
