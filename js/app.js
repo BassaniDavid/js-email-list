@@ -25,3 +25,14 @@ function createHtml(dataEmail) {
     items += `<li class="list-group-item pt-2 pb-2 ps-5 pe-5">${dataEmail}</li>`
 };
 
+// bonus2
+
+// bottone
+const buttonElement = document.getElementById("button")
+
+buttonElement.addEventListener('click', function(){
+    emailList.innerHTML = ''
+}
+);
+
+
